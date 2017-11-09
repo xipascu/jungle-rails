@@ -51,6 +51,20 @@ main section.categories-show {
         font-size: 0.8em;
       }
 
+      aside.badge {
+        color: white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px;
+        background-color: #e47777;
+        border-top-left-radius: inherit;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 20px;
+        font-size: 1.2em;
+      }
+
       &:hover {
 
         border-color: #999;
