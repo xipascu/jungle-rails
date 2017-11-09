@@ -5,7 +5,7 @@
   </header>
 
   <div class="well">
-    <%= link_to 'All Categories', [:admin, :categories], class: 'btn btn-info' %>
+    <%= link_to 'Back to Products', [:admin, :products], class: 'btn btn-info' %>
   </div>
 
   <div class="row">
@@ -26,38 +26,10 @@
         <div class="form-group">
           <%= form.label :name %>
           <%= form.text_field :name, class: 'form-control' %>
-        </div>
-
-        <div class="form-group">
-          <%= form.label :description %>
-          <%= form.text_area :description, class: 'form-control' %>
-        </div>
-
-        <div class="form-group">
-          <%= form.label :product %>
-          <%= form.select :category_id, options_from_collection_for_select(Category.all.order(:name), :id, :name), { include_blank: true }, class: 'form-control' %>
-        </div>
-
-        <div class="form-group">
-          <%= form.label :quantity %>
-          <%= form.number_field :quantity, class: 'form-control' %>
-        </div>
-
-        <div class="form-group">
-          <%= form.label :price %>
-          <%= form.text_field :price, class: 'form-control' %>
-        </div>
-
-
-
-        <div class="form-group">
-          <%= form.label :image %>
-          <%= form.file_field :image %>
-        </div>
+        </div>  
 
         <%= form.submit 'Create Category', class: 'btn btn-primary' %>
       <% end %>
     </div>
   </div>
-
 </section>
