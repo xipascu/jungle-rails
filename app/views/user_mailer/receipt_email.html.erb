@@ -1,6 +1,18 @@
-<h1>Hi <%= @order.email %>, </h1>
+<header class="page-header">
+  <h1>My order</h1>
+</header>
+
+<h1>Thank you for your order, <%= @order.email %></h1>
 <p>
-  Here is your receipt for order <%= @order.id %><br>
+  You have successfully ordered from Jungle.
+  <h2>Your confirmation id is: <em><%= @order.id %></em><h2>
 </p>
-<p>We hope you enjoy your order, see you soon!</p>
-    
+
+<% @total_price = 0 %>
+<% @order.line_items.each do |line_item| %>
+  <%= render 'receipt', line_item: line_item %>
+<% end %>
+
+<p>Total Price: $<%= @total_price %></p>
+
+<h4>Thank you for your order!</h4>
