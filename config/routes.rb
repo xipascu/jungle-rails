@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
-  
+
   resource :cart, only: [:show] do
     put    :add_item
     delete :remove_item
