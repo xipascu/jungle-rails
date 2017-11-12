@@ -25,15 +25,24 @@
         </dl>
       </div>
     </div>    
-  <div> <p> <%= @product.reviews.length %>
+    
+    <div>
+      <%= form_for [@product, @review] do |form| %>
+        <%= form.label :review %>
+        <%= form.text_field :description %>
+        <%= form.label :rating %>
+        <%= form.select(:rating, (1..5)) %>
+        <%= form.submit 'Post Review' %>
+      <% end %>
+    </div>
+
+    <div> <p> 
     <% @product.reviews.each do |review| %>
       <%= render 'review', review: review %>
     <% end %>
     </p>
     </div>
     
-  
-
-
   </article>
 </section>
+
