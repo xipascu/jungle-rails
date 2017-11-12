@@ -19,8 +19,8 @@
       </thead>
         <tbody>
         <% @order_total = 0 %>
-        <% @order.line_items.each do |product_id| %>
-          <%= render 'item', product_id: product_id %>
+        <% @order.line_items.each do |line_item| %>
+          <%= render 'item', line_item: line_item %>
         <% end %>
       </tbody>
         <tfoot>
