@@ -26,6 +26,8 @@
       </div>
     </div>    
     
+    <% if !current_user.nil? %>
+    <h3> Leave a review! </h3>
     <div>
       <%= form_for [@product, @review] do |form| %>
         <%= form.label :rating %>
@@ -35,13 +37,13 @@
         <%= form.submit 'Post Review' %>
       <% end %>
     </div>
+    <% end %>
 
     <div> <p> 
-    <% @product.reviews.reverse.each do |review| %>
-      <%= render 'review', review: review %>
-    <% end %>
-    </p>
-    </div>
+      <% @product.reviews.reverse.each do |review| %>
+        <%= render 'review', review: review %>
+      <% end %>
+    </p></div>
     
   </article>
 </section>
