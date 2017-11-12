@@ -52,8 +52,10 @@
   </div>
 
   <% else %>
-  <h2><%= fa_icon "shopping-cart" %> Your shopping cart is empty!</h2>
-  <%= link_to "Find yourself some goodies!", root_path, class: 'btn btn-lg btn-primary' %>
+  <center>
+  <h3><%= fa_icon "shopping-cart" %> Your shopping cart is empty!</h3>
+  <%= link_to "Continue shopping", root_path, class: 'btn btn-info btn-sm' %>
+  </center>
 
   <% end %>
 

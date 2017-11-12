@@ -132,40 +132,47 @@ cat3.products.create!({
   price: 2_483.75
 })
 
-##  REVIEWS
-Product.find_or_create_by!({
-  name:  'Hipster Hat',
-  description: 'This hat surrounds the my outer-skeleton head very well.',
-  image: open_asset('apparel3.jpg'),
-  quantity: 4,
-  price: 34.49
-  rating: 5
-})
 
-Product.find_or_create_by!({
-  name:  'Hipster Socks',
-  description: 'These socks feel great on my outer epidermis.',
-  image: open_asset('apparel4.jpg'),
-  quantity: 4,
-  price: 34.49
-  rating: 4
-})
+User.destroy_all
 
-Product.find_or_create_by!({
-  name:  'Russian Spy Shoes',
-  description: Faker::Hipster.paragraph(4),
-  image: open_asset('apparel5.jpg'),
-  quantity: 8,
-  price: 1_225.00
-  rating: 2
-})
+u1 = User.create(first_name: "Homer", last_name: "Simpson", email: "homer@simpsons.com", 
+password_digest:"$2a$10$r1NBm059TK3fQenpKhIPDORsRCM2WK3vQihBmPxujAMQAuWtqqCd2")
 
-Product.find_or_create_by!({
-  name:  'Modern Skateboards',
-  description: Faker::Hipster.paragraph(4),
-  image: open_asset('electronics1.jpg'),
-  quantity: 40,
-  price: 164.49
-  rating: 4
-})
+puts "Reviews "
+Review.destroy_all
+
+p1 = Product.first
+p1.reviews.create(user_id: u1.id, description: "great product", rating: 4)
+p1.reviews.create(user_id: u1.id, description: "crappy product", rating: 1)
+
+
+# ##  REVIEWS
+# Product.find(3).review.create!({
+#   product_id: 3,
+#   user_id: 1,
+#   description: 'This hat surrounds my outer-skeleton head very well.',
+#   rating: 5
+# })
+
+# Product.find(4).review.create!({
+#   product_id: 4,
+#   user_id: 2,
+#   description: 'These socks feel great on my outer epidermis.',
+#   rating: 5
+# })
+
+# Product.find(5).review.create!({
+#   product_id: 5,
+#   user_id: 1,
+#   description: 'These shoes did not describe the porkbelly leggings well, will not purchase again.',
+#   rating: 2
+# })
+
+# Product.find(5).review.create!({
+#   product_id: 5,
+#   user_id: 2,
+#   description: 'Bumpin, spyin, russian.',
+#   rating: 4
+# })
+
 puts "DONE!"
