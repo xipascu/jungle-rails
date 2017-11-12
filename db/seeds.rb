@@ -132,5 +132,40 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+##  REVIEWS
+Product.find_or_create_by!({
+  name:  'Hipster Hat',
+  description: 'This hat surrounds the my outer-skeleton head very well.',
+  image: open_asset('apparel3.jpg'),
+  quantity: 4,
+  price: 34.49
+  rating: 5
+})
 
+Product.find_or_create_by!({
+  name:  'Hipster Socks',
+  description: 'These socks feel great on my outer epidermis.',
+  image: open_asset('apparel4.jpg'),
+  quantity: 4,
+  price: 34.49
+  rating: 4
+})
+
+Product.find_or_create_by!({
+  name:  'Russian Spy Shoes',
+  description: Faker::Hipster.paragraph(4),
+  image: open_asset('apparel5.jpg'),
+  quantity: 8,
+  price: 1_225.00
+  rating: 2
+})
+
+Product.find_or_create_by!({
+  name:  'Modern Skateboards',
+  description: Faker::Hipster.paragraph(4),
+  image: open_asset('electronics1.jpg'),
+  quantity: 40,
+  price: 164.49
+  rating: 4
+})
 puts "DONE!"
