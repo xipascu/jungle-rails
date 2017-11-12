@@ -28,10 +28,10 @@
     
     <div>
       <%= form_for [@product, @review] do |form| %>
-        <%= form.label :review %>
-        <%= form.text_field :description %>
         <%= form.label :rating %>
         <%= form.select(:rating, (1..5)) %>
+        <%= form.label :review %>
+        <%= form.text_field :description %>
         <%= form.submit 'Post Review' %>
       <% end %>
     </div>
