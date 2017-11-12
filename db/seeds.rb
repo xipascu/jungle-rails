@@ -135,7 +135,7 @@ cat3.products.create!({
 
 User.destroy_all
 
-u1 = User.create(first_name: "Homer", last_name: "Simpson", email: "homer@simpsons.com", 
+u1 = User.create(first_name: "You", last_name: "You", email: "you@you.you", 
 password_digest:"$2a$10$r1NBm059TK3fQenpKhIPDORsRCM2WK3vQihBmPxujAMQAuWtqqCd2")
 
 puts "Reviews "
