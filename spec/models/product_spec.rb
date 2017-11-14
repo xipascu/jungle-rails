@@ -34,8 +34,6 @@ RSpec.describe Product, type: :model do
       @product.category = nil
       expect(@product).not_to be_valid
     end
-    
-
 
   end
 end
