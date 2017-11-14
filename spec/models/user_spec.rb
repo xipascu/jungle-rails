@@ -70,9 +70,32 @@ RSpec.describe User, type: :model do
     end
   end
 
-  # describe '.authenticate_with_credentials' do
-  #   # examples for this class method here
-  # end
 
+  describe 'authenticate_with_credentials' do
+    before(:each) do
+      @user = User.new
+      @user.first_name = "Donkey"
+      @user.last_name = "Kong"
+      @user.email = "donkeykong@donkey.kong"
+      @user.password = "donkeykong"
+      @user.password_confirmation = "donkeykong"
+      @user.save
+    end
 
+    it 'should create a new instance given valid attributes' do
+      expect(@user).to be_valid
+    end
+
+    
+    it 'should validate when email has spaces' do
+      @user.email = " donkeykong@donkey.kong"
+      expect((User.authenticate_with_credentials @user.email, @user.password) == @user).to be_present
+    end
+
+    it 'should validate with lower and upper case' do
+      @user.email = "dOnkeYKong@donkeY.Kong"
+      expect((User.authenticate_with_credentials @user.email, @user.password) == @user).to be_present
+    end
+
+  end
 end
