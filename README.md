@@ -2,6 +2,10 @@
 
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
+## Screenshots
+!["Products Page"](https://raw.githubusercontent.com/xipascu/jungle-rails/feature/product-specs/docs/products.png)
+!["Register Page"](https://raw.githubusercontent.com/xipascu/jungle-rails/feature/product-specs/docs/Signup.png)
+!["Cart & Pay"](https://raw.githubusercontent.com/xipascu/jungle-rails/feature/product-specs/docs/stripe.png)
 
 ## Setup
 
